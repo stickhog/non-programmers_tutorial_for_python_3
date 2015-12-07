@@ -14,4 +14,26 @@ while menu_choice != 5:
     if menu_choice == 1:
         print("Telephone Numbers:")
         for x in numbers.keys():
-            print("Name: ", )
+            print("Name: ", x, "\tNumber:", numbers[x])
+        print()
+    elif menu_choice == 2:
+        print("Add Name and Number")
+        name = input("Name: ")
+        phone = input("Number: ")
+        numbers[name] = phone
+    elif menu_choice == 3:
+        print("Remove Name and Number")
+        name = input("Name: ")
+        if name in numbers:
+            del numbers[name]
+        else:
+            print(name, "was not found")
+    elif menu_choice == 4:
+        print("Lookup Number")
+        name = input("Name: ")
+        if name in numbers:
+            print("The number is", numbers[name])
+        else:
+            print(name, "was not found")
+    elif menu_choice != 5:
+        print_menu()
